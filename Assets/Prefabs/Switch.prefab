@@ -155,6 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentVal: {fileID: 0}
   animator: {fileID: 5088545798347505148}
+  correctBall: {fileID: 0}
 --- !u!65 &4373810233015386794
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -259,7 +260,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 35bbaaaa00810254ca04ebbd98fa6100, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

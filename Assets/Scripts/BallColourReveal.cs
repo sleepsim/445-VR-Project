@@ -18,6 +18,12 @@ public class BallColourReveal : MonoBehaviour
             materialsCopy[0] = ballColour;
             ballRenderer.materials = materialsCopy;
         }
+
+        else {
+            var materialsCopy = ballRenderer.materials;
+            materialsCopy[0] = defaultBallColour;
+            ballRenderer.materials = materialsCopy;
+        }
     }
 
     public void OnTriggerExit(Collider other)

@@ -99,7 +99,9 @@ public class BearFSM : MonoBehaviour
     private void TalkToPlayer()
     {
         agent.SetDestination(transform.position);
-        transform.LookAt(player);
+
+        Vector3 targetPosition = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
+        transform.LookAt(targetPosition);
     }
 
     private void OnDrawGizmosSelected()

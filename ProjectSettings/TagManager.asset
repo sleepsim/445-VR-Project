@@ -15,8 +15,8 @@ TagManager:
   - Player(Child)
   - Player(Toy)
   - Walkable
-  - 
-  - 
+  - Walls
+  - SpawnPoint
   - 
   - 
   - 

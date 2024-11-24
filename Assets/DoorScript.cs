@@ -5,11 +5,14 @@ using UnityEngine;
 public class DoorScript : MonoBehaviour
 {
     public GameObject doorBlock;
+    public AudioSource audioClip;
+
     public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             doorBlock.SetActive(false);
+            audioClip.Play();
         }
 
         else
@@ -23,6 +26,7 @@ public class DoorScript : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             doorBlock.SetActive(true);
+            audioClip.Play();
         }
     }
 }

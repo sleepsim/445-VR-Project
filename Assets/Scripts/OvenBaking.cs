@@ -7,7 +7,7 @@ public class OvenController : MonoBehaviour
     public Material redMaterial; // Material for the red (non-pressable) state
     public Material greenMaterial; // Material for the green (pressable) state
     public GameObject cakePrefab; // Cake object to spawn
-     [SerializeField] private Animator animator;
+     public Animator animator;
 
     private bool[] itemsPresent = new bool[4]; // Tracks which items are present
     private bool buttonPressable = false; // Tracks if the button can be pressed
@@ -35,10 +35,6 @@ public class OvenController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         CheckItemTag(other, true);
-        if (buttonPressable && !cakeRevealed && IsButtonPressed())
-        {
-        animator.SetBool("Down", true);  // Reset the animation when button is not pressable or cake revealed
-    }
     }
 
     private void OnTriggerExit(Collider other)
@@ -84,7 +80,7 @@ public class OvenController : MonoBehaviour
     private void Update()
     {
         if (buttonPressable && !cakeRevealed && IsButtonPressed())
-        {
+        {animator.SetBool("Down", true); 
             StartCoroutine(RevealCake());
             Debug.Log("revealCake");
         }  
@@ -100,5 +96,6 @@ public class OvenController : MonoBehaviour
         cakeRevealed = true; // Prevent multiple reveals
         yield return new WaitForSeconds(5f); // Wait for 5 seconds
         cakePrefab.SetActive(true); // Show the cake
+        animator.SetBool("Down", false); 
     }
 }

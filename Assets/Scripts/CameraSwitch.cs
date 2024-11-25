@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.XR.LegacyInputHelpers;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Inputs;
@@ -13,6 +14,9 @@ public class CameraSwitch : MonoBehaviour
     private int currentCameraIndex = 0;
 
     public GameObject[] rigs;
+
+    public InputActionProperty primaryButtonAction;
+    public InputActionProperty secondaryButtonAction;
 
     // Start is called before the first frame update
     void Start()
@@ -44,7 +48,9 @@ public class CameraSwitch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            if (Input.GetKeyDown(KeyCode.Alpha1)) SwitchToCamera(0);
-            if (Input.GetKeyDown(KeyCode.Alpha2)) SwitchToCamera(1);
+        //if (Input.GetKeyDown(KeyCode.Alpha1)) SwitchToCamera(0);
+        //if (Input.GetKeyDown(KeyCode.Alpha2)) SwitchToCamera(1);
+        if (primaryButtonAction.action.triggered) SwitchToCamera(0);
+        if (secondaryButtonAction.action.triggered)SwitchToCamera(1);
     }
 }

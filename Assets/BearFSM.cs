@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 public class BearFSM : MonoBehaviour
 {
@@ -66,29 +67,66 @@ public class BearFSM : MonoBehaviour
 
     private void Patrolling()
     {
-        if (!walkPointSet) SearchWalkPoint();
+        //if (!walkPointSet) SearchWalkPoint();
+        if (!walkPointSet)
+        {
+            walkPoint = RandomNavmeshLocation(7);
+            walkPointSet = true;
+        }
 
         if (walkPointSet) agent.SetDestination(walkPoint);
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
         //Debug.Log("walkpoint set" + walkPointSet);
-        //Debug.Log(distanceToWalkPoint);
+        //Debug.Log(distanceToWalkPoint.magnitude);
+        //Debug.Log("vect dist" + Vector3.Distance(transform.position, walkPoint));
 
-        if (distanceToWalkPoint.magnitude < 1.5f) walkPointSet = false;
+        if (distanceToWalkPoint.magnitude < 3f) walkPointSet = false;
     }
 
     private void SearchWalkPoint()
     {
-        float randomZ = UnityEngine.Random.Range(-walkPointRange, walkPointRange);
-        float randomX = UnityEngine.Random.Range(-walkPointRange, walkPointRange);
+        //float randomZ = UnityEngine.Random.Range(-walkPointRange, walkPointRange);
+        //float randomX = UnityEngine.Random.Range(-walkPointRange, walkPointRange);
 
-        walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+        //walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
 
-        if(Physics.Raycast(walkPoint, Vector3.down, 5f, whatIsGround)) walkPointSet = true;
+        //if(Physics.Raycast(walkPoint, Vector3.down, 5f, whatIsGround)) walkPointSet = true;
 
-        Debug.Log("Test if okay " + (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround)));
+        //Debug.Log("Test if okay " + (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround)));
 
+        Vector3 randomDirection = Random.insideUnitSphere * walkPointRange;
+        randomDirection += transform.position;
+        NavMeshHit hit;
+        NavMesh.SamplePosition(randomDirection, out hit, walkPointRange, 1);
+        Vector3 finalPosition = hit.position;
+
+        Debug.Log("New Walkpoint Set ahaha");
+        walkPointSet = true;
+
+    }
+
+    public Vector3 RandomNavmeshLocation(float radius)
+    {
+
+        Vector3 randomDirection = Random.insideUnitSphere * radius;
+        randomDirection += transform.position;  // Offset the position by the object's current position
+
+        NavMeshHit hit;
+        Vector3 finalPosition = Vector3.zero;
+
+        if (NavMesh.SamplePosition(randomDirection, out hit, radius, NavMesh.AllAreas))
+        {
+            finalPosition = hit.position; // Get the valid position found on the NavMesh
+        }
+        else
+        {
+            // If no valid position was found, log the failure.
+            Debug.LogWarning("No valid NavMesh position found within the given radius.");
+        }
+
+        return finalPosition; // Return the valid position, or Vector3.zero if no valid position was found
     }
 
     private void ChasePlayer()

@@ -5147,7 +5147,7 @@ PrefabInstance:
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0,
         type: 3}
@@ -5157,7 +5157,7 @@ PrefabInstance:
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0,
         type: 3}
@@ -22481,7 +22481,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1556821890}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -23429,6 +23429,48 @@ MonoBehaviour:
   rigs:
   - {fileID: 589932996}
   - {fileID: 1542849364}
+  primaryButtonAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Primary Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 5513a62f-533e-4851-b969-5786743627e1
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: 6affb3b3-e9af-41e7-9872-be5d506d4674
+        m_Path: <OculusTouchController>{RightHand}/primaryButton
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Primary Button
+        m_Flags: 0
+      m_Flags: 0
+    m_Reference: {fileID: -3599823989380923159, guid: 0be0028c24f2a4c14a96b6aa39055933,
+      type: 3}
+  secondaryButtonAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Secondary Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 9640fb63-0b41-456e-b532-33ab892bcc79
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: a88b190c-2e9f-40f4-a74d-befb609b8ecb
+        m_Path: <OculusTouchController>{RightHand}/secondaryButton
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Secondary Button
+        m_Flags: 0
+      m_Flags: 0
+    m_Reference: {fileID: -8069514856583376848, guid: 0be0028c24f2a4c14a96b6aa39055933,
+      type: 3}
 --- !u!4 &1664710063
 Transform:
   m_ObjectHideFlags: 0
@@ -24036,7 +24078,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1729877606}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -24212,7 +24254,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1741662296}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 

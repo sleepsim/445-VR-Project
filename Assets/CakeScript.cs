@@ -9,7 +9,19 @@ public class CakeScript : MonoBehaviour
     {
         if (other.tag == "Bear")
         {
-            //End game
+            
+
         }
+    }
+
+    private IEnumerator endScreen()
+    {
+        Debug.Log("Game Done");
+
+       
+
+
+        yield return new WaitForSeconds(5f); // Wait for 5 seconds
+
     }
 }

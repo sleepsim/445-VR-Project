@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class OvenController : MonoBehaviour
 {
@@ -76,14 +77,14 @@ public class OvenController : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (buttonPressable && !cakeRevealed && IsButtonPressed())
-        {
-            StartCoroutine(RevealCake());
-            Debug.Log("revealCake");
-        }
-    }
+    //private void Update()
+    //{
+    //    if (buttonPressable && !cakeRevealed && IsButtonPressed())
+    //    {
+    //        StartCoroutine(RevealCake());
+    //        Debug.Log("revealCake");
+    //    }
+    //}
 
     private bool IsButtonPressed()
     {
@@ -91,7 +92,8 @@ public class OvenController : MonoBehaviour
     }
 
     private IEnumerator RevealCake()
-    {Debug.Log("Cake Revealed");
+    {   
+        Debug.Log("Cake Revealed");
 
         //Remove ingredients
         GameObject[] flour = GameObject.FindGameObjectsWithTag("item1");
@@ -107,5 +109,14 @@ public class OvenController : MonoBehaviour
         cakeRevealed = true; // Prevent multiple reveals
         yield return new WaitForSeconds(5f); // Wait for 5 seconds
         cakePrefab.SetActive(true); // Show the cake
+    }
+
+    public void OnSelectEntered(SelectEnterEventArgs args)
+    {
+        if (buttonPressable && !cakeRevealed)
+        {
+            StartCoroutine(RevealCake());
+            Debug.Log("revealCake");
+        }
     }
 }

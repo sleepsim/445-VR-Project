@@ -9,6 +9,7 @@ TagManager:
   - item2
   - item3
   - item4
+  - Bear
   layers:
   - Default
   - TransparentFX

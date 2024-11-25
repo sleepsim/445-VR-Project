@@ -15,8 +15,8 @@ public class CameraSwitch : MonoBehaviour
 
     public GameObject[] rigs;
 
-    public InputActionProperty primaryButtonAction;
-    public InputActionProperty secondaryButtonAction;
+    public InputAction cameraOneButton;
+    public InputAction cameraTwoButton;
 
     // Start is called before the first frame update
     void Start()
@@ -50,7 +50,29 @@ public class CameraSwitch : MonoBehaviour
     {
         //if (Input.GetKeyDown(KeyCode.Alpha1)) SwitchToCamera(0);
         //if (Input.GetKeyDown(KeyCode.Alpha2)) SwitchToCamera(1);
-        if (primaryButtonAction.action.triggered) SwitchToCamera(0);
-        if (secondaryButtonAction.action.triggered)SwitchToCamera(1);
+        //if (primaryButtonAction.action.triggered) SwitchToCamera(0);
+        //if (secondaryButtonAction.action.triggered)SwitchToCamera(1);
+
+        if (cameraOneButton.triggered)
+        {
+            SwitchToCamera(0);
+        }
+        if (cameraTwoButton.triggered)
+        {
+            SwitchToCamera(1);
+        }
+    }
+
+    void OnEnable()
+    {
+        //flashlight = action.FindAction()
+        cameraOneButton.Enable();
+        cameraTwoButton.Enable();
+    }
+
+    private void OnDisable()
+    {
+        cameraOneButton.Disable();
+        cameraTwoButton.Disable();
     }
 }

@@ -87,7 +87,7 @@ public class BearFSM : MonoBehaviour
 
         if(Physics.Raycast(walkPoint, Vector3.down, 5f, whatIsGround)) walkPointSet = true;
 
-        Debug.Log("Test if okay " + (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround)));
+        // Debug.Log("Test if okay " + (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround)));
 
     }
 

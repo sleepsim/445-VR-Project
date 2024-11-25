@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - CinemachineTarget
+  - item1
+  - item2
+  - item3
+  - item4
   layers:
   - Default
   - TransparentFX

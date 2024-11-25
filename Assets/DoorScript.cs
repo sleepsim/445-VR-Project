@@ -9,15 +9,18 @@ public class DoorScript : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if(GlobalVariables.switch1 == true && GlobalVariables.switch2 == true && GlobalVariables.switch3 == true)
         {
-            doorBlock.SetActive(false);
-            audioClip.Play();
-        }
+            if (other.CompareTag("Player"))
+            {
+                doorBlock.SetActive(false);
+                audioClip.Play();
+            }
 
-        else
-        {
-            doorBlock.SetActive(true);
+            else
+            {
+                doorBlock.SetActive(true);
+            }
         }
     }
 

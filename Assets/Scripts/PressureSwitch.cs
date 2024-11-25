@@ -16,6 +16,21 @@ public class PressureSwitch : MonoBehaviour
         {
             currentVal.AddPressureSwitch(this); // Notify the current value
             animator.SetBool("Down", true); // Trigger the animation to go down
+
+            switch(correctBall.name)
+            {
+                case "Green Sphere":
+                    GlobalVariables.switch3 = true;
+                    break;
+                case "Blue Sphere":
+                    GlobalVariables.switch2 = true;
+                    break;
+                case "Red Sphere":
+                    GlobalVariables.switch1 = true;
+                    break;
+                default:
+                    break;
+            }
         }
     }
 

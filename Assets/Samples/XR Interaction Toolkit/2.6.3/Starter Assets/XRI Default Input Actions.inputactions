@@ -960,19 +960,8 @@
                 },
                 {
                     "name": "",
-                    "id": "db22c442-8224-4195-854f-5aeada75d9ec",
-                    "path": "<XRController>{LeftHand}/{PrimaryButton}",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Camera Buttons",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "80277006-c4fb-4edf-8ff2-fbee89a91872",
-                    "path": "<XRController>{LeftHand}/{SecondaryButton}",
+                    "id": "40a0a547-a82e-4e75-b8da-b5ace6259402",
+                    "path": "",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

@@ -15,6 +15,8 @@ public class CameraSwitch : MonoBehaviour
 
     public GameObject[] rigs;
 
+    public GameObject toyModel;
+
     public InputAction cameraOneButton;
     public InputAction cameraTwoButton;
 
@@ -22,6 +24,7 @@ public class CameraSwitch : MonoBehaviour
     void Start()
     {
         SwitchToCamera(currentCameraIndex);
+        toyModel.SetActive(false);
     }
 
     public void SwitchToCamera(int index)
@@ -48,17 +51,24 @@ public class CameraSwitch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Alpha1)) SwitchToCamera(0);
-        //if (Input.GetKeyDown(KeyCode.Alpha2)) SwitchToCamera(1);
+        if (Input.GetKeyDown(KeyCode.Alpha1)) SwitchToCamera(0);
+        if (Input.GetKeyDown(KeyCode.Alpha2)) SwitchToCamera(1);
         //if (primaryButtonAction.action.triggered) SwitchToCamera(0);
         //if (secondaryButtonAction.action.triggered)SwitchToCamera(1);
 
         if (cameraOneButton.triggered)
         {
+            toyModel.SetActive(false);
             SwitchToCamera(0);
         }
         if (cameraTwoButton.triggered)
         {
+            toyModel.SetActive(true);
+            toyModel.transform.position = rigs[0].transform.position;
+            Vector3 heightOffset = toyModel.transform.position;
+            heightOffset.y = 3.85f;
+            toyModel.transform.position = heightOffset;
+            toyModel.transform.rotation = rigs[0].transform.rotation;
             SwitchToCamera(1);
         }
     }

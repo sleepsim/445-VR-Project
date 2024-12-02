@@ -37,6 +37,10 @@ public class PressureSwitch : MonoBehaviour
                     break;
             }
         }
+        else if(other.gameObject.CompareTag("ball") && other.gameObject != correctBall)
+        {
+            audioClipWrong.Play();
+        }
     }
 
     private void OnTriggerExit(Collider other)

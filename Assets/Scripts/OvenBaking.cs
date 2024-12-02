@@ -8,6 +8,8 @@ public class OvenController : MonoBehaviour
     public Material redMaterial; // Material for the red (non-pressable) state
     public Material greenMaterial; // Material for the green (pressable) state
     public GameObject cakePrefab; // Cake object to spawn
+    public AudioSource audioDing;
+    public AudioSource audioCountdown;
 
     private bool[] itemsPresent = new bool[4]; // Tracks which items are present
     private bool buttonPressable = false; // Tracks if the button can be pressed
@@ -95,6 +97,8 @@ public class OvenController : MonoBehaviour
     {   
         Debug.Log("Cake Revealed");
 
+        audioCountdown.Play();
+
         //Remove ingredients
         GameObject[] flour = GameObject.FindGameObjectsWithTag("item1");
         GameObject[] milk = GameObject.FindGameObjectsWithTag("item2");
@@ -108,6 +112,7 @@ public class OvenController : MonoBehaviour
 
         cakeRevealed = true; // Prevent multiple reveals
         yield return new WaitForSeconds(5f); // Wait for 5 seconds
+        audioDing.Play();
         cakePrefab.SetActive(true); // Show the cake
     }
 

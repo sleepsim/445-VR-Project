@@ -5,9 +5,11 @@ using UnityEngine;
 public class PressureSwitch : MonoBehaviour
 {
     [SerializeField] private Value currentVal; // Reference to the Value object
-    [SerializeField] private Animator animator; // Reference to the Animator
-
+    [SerializeField] private Animator animator; // Reference to the Animato
     [SerializeField] private GameObject correctBall;
+
+    public AudioSource audioClipCorrect;
+    public AudioSource audioClipWrong;
 
     private void OnTriggerEnter(Collider other )
     {
@@ -21,12 +23,15 @@ public class PressureSwitch : MonoBehaviour
             {
                 case "Green Sphere":
                     GlobalVariables.switch3 = true;
+                    audioClipCorrect.Play();
                     break;
                 case "Blue Sphere":
                     GlobalVariables.switch2 = true;
+                    audioClipCorrect.Play();
                     break;
                 case "Red Sphere":
                     GlobalVariables.switch1 = true;
+                    audioClipCorrect.Play();
                     break;
                 default:
                     break;

@@ -28,8 +28,11 @@ public class DoorScript : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            if (doorBlock.activeSelf == false)
+            {
+                audioClip.Play();
+            }
             doorBlock.SetActive(true);
-            audioClip.Play();
         }
     }
 }

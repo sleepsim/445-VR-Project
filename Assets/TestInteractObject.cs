@@ -6,6 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class TestInteractObject : MonoBehaviour
 {
     public Transform socketTransform;
+    public AudioSource audioPlate;
 
     public void LogMessage()
     {
@@ -39,6 +40,8 @@ public class TestInteractObject : MonoBehaviour
                         // Run the if statement to check the selectTarget
                         if (socketInteractor.interactablesSelected.Count > 0)
                         {
+                            audioPlate.Play();
+
                             XRBaseInteractable attachedInteractable = (XRBaseInteractable)socketInteractor.interactablesSelected[0];
                             Debug.Log("Attached Object: " + attachedInteractable.transform.name);
 

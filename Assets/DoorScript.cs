@@ -9,7 +9,7 @@ public class DoorScript : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if(GlobalVariables.switch1 == true && GlobalVariables.switch2 == true && GlobalVariables.switch3 == true)
+        if(GlobalVariables.switch1 == true && GlobalVariables.switch2 == true && GlobalVariables.switch3 == true && GlobalVariables.doorUnlocked == true)
         {
             if (other.CompareTag("Player"))
             {
@@ -19,7 +19,7 @@ public class DoorScript : MonoBehaviour
 
             else
             {
-                doorBlock.SetActive(true);
+                //doorBlock.SetActive(true);
             }
         }
     }

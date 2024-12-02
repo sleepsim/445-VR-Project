@@ -31,6 +31,7 @@ public class TestInteractObject : MonoBehaviour
 
                 // Try to find the "Sphere Drop Zone" object
                 Transform sphereDropZone = parent.Find("Sphere Drop Zone"); // Use the exact name of the object
+
                 if (sphereDropZone != null)
                 {
                     // Get the XRSocketInteractor script from the Sphere Drop Zone
@@ -38,6 +39,7 @@ public class TestInteractObject : MonoBehaviour
                     if (socketInteractor != null)
                     {
                         // Run the if statement to check the selectTarget
+                        Debug.Log("Interactables Count: " + socketInteractor.interactablesSelected.Count);
                         if (socketInteractor.interactablesSelected.Count > 0)
                         {
                             audioPlate.Play();
@@ -54,10 +56,25 @@ public class TestInteractObject : MonoBehaviour
                             attachedObject.transform.SetParent(null);
                             attachedObject.transform.position = socketTransform.position;
 
-                            Debug.Log(attachedObject.transform.position);
-                            Debug.Log(socketTransform.localPosition);
+                            //Debug.Log(attachedObject.transform.position);
+                            //Debug.Log(socketTransform.localPosition);
 
                             socketInteractor.enabled = true;
+
+                            if (parent.name.Contains("Right"))
+                            {
+                                Transform gparent = parent.parent;
+                                Transform rightControllerStabilized = gparent.Find("Right Controller Stabilized");
+                                Transform placeHolderSphere = rightControllerStabilized.Find("RightSphere");
+                                placeHolderSphere.gameObject.SetActive(false);
+                            }
+                            if (parent.name.Contains("Left"))
+                            {
+                                Transform gparent = parent.parent;
+                                Transform leftControllerStabilized = gparent.Find("Left Controller Stabilized");
+                                Transform placeHolderSphere = leftControllerStabilized.Find("LeftSphere");
+                                placeHolderSphere.gameObject.SetActive(false);
+                            }
                         }
                         else
                         {

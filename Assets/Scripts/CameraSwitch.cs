@@ -16,6 +16,7 @@ public class CameraSwitch : MonoBehaviour
     public GameObject[] rigs;
 
     public GameObject toyModel;
+    public GameObject childModel;
 
     public InputAction cameraOneButton;
     public InputAction cameraTwoButton;
@@ -59,11 +60,15 @@ public class CameraSwitch : MonoBehaviour
         if (cameraOneButton.triggered)
         {
             toyModel.SetActive(false);
+            childModel.SetActive(true);
+            childModel.transform.position = rigs[1].transform.position;
+            childModel.transform.LookAt(rigs[0].transform.position);
             SwitchToCamera(0);
         }
         if (cameraTwoButton.triggered)
         {
             toyModel.SetActive(true);
+            childModel.SetActive(false);
             toyModel.transform.position = rigs[0].transform.position;
             Vector3 heightOffset = toyModel.transform.position;
             heightOffset.y = 3.85f;

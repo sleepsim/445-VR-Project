@@ -10,6 +10,7 @@ TagManager:
   - item3
   - item4
   - Bear
+  - ball
   layers:
   - Default
   - TransparentFX

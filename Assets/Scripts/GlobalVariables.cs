@@ -17,7 +17,7 @@ public static class GlobalVariables
             if (numSequence[i] > numSequence[i + 1])
             {
                 doorUnlocked = false;
-                break;  // Stop checking if we find an unordered pair
+                return false;  // Stop checking if we find an unordered pair
             }
         }
 

@@ -16,6 +16,12 @@ public class OvenController : MonoBehaviour
     private bool cakeRevealed = false; // To prevent multiple reveals
     private Renderer buttonRenderer; // Renderer for the button
 
+    [Header("Ray Interactors")]
+    public XRRayInteractor leftInteractor;
+    public XRRayInteractor rightInteractor;
+    public GameObject leftDropZone;
+    public GameObject rightDropZone;
+
     private void Start()
     { 
         // Spawn the cake at a fixed position relative to the oven
@@ -121,6 +127,16 @@ public class OvenController : MonoBehaviour
         if (buttonPressable && !cakeRevealed)
         {
             StartCoroutine(RevealCake());
+
+            leftInteractor.useForceGrab = true;
+            rightInteractor.useForceGrab = true;
+
+            leftDropZone.SetActive(true);
+            rightDropZone.SetActive(true);
+
+            leftInteractor.attachTransform = leftDropZone.transform;
+            rightInteractor.attachTransform= rightDropZone.transform;
+
             Debug.Log("revealCake");
         }
     }

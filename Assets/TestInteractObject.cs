@@ -21,13 +21,13 @@ public class TestInteractObject : MonoBehaviour
         if (interactor != null)
         {
             // Log the Interactor's name
-            Debug.Log($"Interactor: {interactor.name}");
+            //Debug.Log($"Interactor: {interactor.name}");
 
             // Access the parent of the Interactor
             Transform parent = interactor.transform.parent;
             if (parent != null)
             {
-                Debug.Log($"Interactor's Parent: {parent.name}");
+                //Debug.Log($"Interactor's Parent: {parent.name}");
 
                 // Try to find the "Sphere Drop Zone" object
                 Transform sphereDropZone = parent.Find("Sphere Drop Zone"); // Use the exact name of the object

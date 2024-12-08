@@ -16,13 +16,14 @@ public class DoorButton : MonoBehaviour
         if (GlobalVariables.numSequence.Count < 3)
         {
             GlobalVariables.numSequence.Add(numVal);
-            Debug.Log(GlobalVariables.numSequence);
+            Debug.Log("Added number: " + numVal + "Current List: " + GlobalVariables.numSequence);
             selfButton.SetActive(false);
         }
         else if (GlobalVariables.numSequence.Count == 3)
         {
             if (GlobalVariables.checkSequence())
             {
+                Debug.Log("Check Sequence Success: " + GlobalVariables.numSequence);
                 GlobalVariables.numSequence.Clear();
                 audioSuccess.Play();
                 return;

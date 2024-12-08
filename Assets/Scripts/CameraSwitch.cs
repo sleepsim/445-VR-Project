@@ -88,14 +88,14 @@ public class CameraSwitch : MonoBehaviour
         if(instructionsButton.triggered)
         {
             //If in toy view open instructions for toy
-            if(currentCameraIndex == 0)
+            if (currentCameraIndex == 0)
             {
-
+                toyInstruction.SetActive(!toyInstruction.activeSelf);
             }
             //If in child view open instructions for child
             if(currentCameraIndex == 1)
             {
-
+                childInstruction.SetActive(!childInstruction.activeSelf);
             }
         }
     }
@@ -105,11 +105,13 @@ public class CameraSwitch : MonoBehaviour
         //flashlight = action.FindAction()
         cameraOneButton.Enable();
         cameraTwoButton.Enable();
+        instructionsButton.Enable();
     }
 
     private void OnDisable()
     {
         cameraOneButton.Disable();
         cameraTwoButton.Disable();
+        instructionsButton.Disable();
     }
 }

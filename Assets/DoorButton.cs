@@ -13,28 +13,36 @@ public class DoorButton : MonoBehaviour
 
     public void OnSelectEntered(SelectEnterEventArgs args)
     {
+        GlobalVariables.numSequence.Add(numVal);
+        Debug.Log(GlobalVariables.numSequence.Count);
         if (GlobalVariables.numSequence.Count < 3)
         {
-            GlobalVariables.numSequence.Add(numVal);
-            Debug.Log("Added number: " + numVal + "Current List: " + GlobalVariables.numSequence);
+            //GlobalVariables.numSequence.Add(numVal);
+            Debug.Log("Added number: " + numVal + "Current List: " + GlobalVariables.numSequence.ToString());
             selfButton.SetActive(false);
         }
         else if (GlobalVariables.numSequence.Count == 3)
         {
             if (GlobalVariables.checkSequence())
             {
-                Debug.Log("Check Sequence Success: " + GlobalVariables.numSequence);
+                //Debug.Log("Added number: " + numVal + "Current List: " + GlobalVariables.numSequence.ToString());
+                //Debug.Log("Check Sequence Success: " + GlobalVariables.numSequence.ToString());
                 GlobalVariables.numSequence.Clear();
                 audioSuccess.Play();
+                RedButton.SetActive(false);
+                BlueButton.SetActive(false);
+                GreenButton.SetActive(false);
                 return;
             }
+            Debug.Log("Check sequence failed");
             audioFail.Play();
             GlobalVariables.numSequence.Clear();
+            //Debug.Log(GlobalVariables.numSequence.ToString());
             RedButton.SetActive(true);
             BlueButton.SetActive(true);
             GreenButton.SetActive(true);
-            GlobalVariables.numSequence.Add(numVal);
-            selfButton.SetActive(false);
+            //GlobalVariables.numSequence.Add(numVal);
+            //selfButton.SetActive(false);
         }
     }
     

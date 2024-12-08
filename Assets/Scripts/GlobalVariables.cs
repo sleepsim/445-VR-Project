@@ -14,13 +14,12 @@ public static class GlobalVariables
     {
         for (int i = 0; i < numSequence.Count - 1; i++)
         {
-            if (numSequence[i] > numSequence[i + 1])
+            Debug.Log("number i: " + numSequence[i] + "  number i+1: " + numSequence[i + 1]);
+            if (numSequence[i] > numSequence[i + 1]) // If the current element is greater than the next, it's not ascending
             {
-                doorUnlocked = false;
-                return false;  // Stop checking if we find an unordered pair
+                return false;
             }
         }
-
         doorUnlocked = true;
         return true;
     }

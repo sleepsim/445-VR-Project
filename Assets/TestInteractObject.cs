@@ -39,7 +39,7 @@ public class TestInteractObject : MonoBehaviour
                     if (socketInteractor != null)
                     {
                         // Run the if statement to check the selectTarget
-                        Debug.Log("Interactables Count: " + socketInteractor.interactablesSelected.Count);
+                        //Debug.Log("Interactables Count: " + socketInteractor.interactablesSelected.Count);
                         if (socketInteractor.interactablesSelected.Count > 0)
                         {
                             audioPlate.Play();

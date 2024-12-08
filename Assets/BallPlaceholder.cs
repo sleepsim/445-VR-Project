@@ -9,6 +9,7 @@ public class BallPlaceholder : MonoBehaviour
     public Material r, g, b;
     public MeshRenderer placeholderBallMesh;
     public GameObject placeholderBall;
+    public XRSocketInteractor socket;
 
     public void OnSelectEntered(SelectEnterEventArgs args)
     {
@@ -25,17 +26,17 @@ public class BallPlaceholder : MonoBehaviour
                     case string s when s.Contains("Red"):
                         placeholderBall.SetActive(true);
                         placeholderBallMesh.material = r;
-                        Debug.Log("red");
+                        //Debug.Log("red");
                         break;
                     case string s when s.Contains("Blue"):
                         placeholderBall.SetActive(true);
                         placeholderBallMesh.material = b;
-                        Debug.Log("blue");
+                        //Debug.Log("blue");
                         break;
                     case string s when s.Contains("Green"):
                         placeholderBall.SetActive(true);
                         placeholderBallMesh.material = g;
-                        Debug.Log("Green");
+                        //Debug.Log("Green");
                         break;
                     default:
                         break;
@@ -48,5 +49,19 @@ public class BallPlaceholder : MonoBehaviour
             Debug.Log("Empty not grabbing anything");
         }
 
+    }
+
+    public void Update()
+    {
+        //// Find the GameObject by name
+        //IXRSelectInteractable foundObject = socket.interactablesSelected.Find(obj => obj.transform.name == "Red Sphere");
+        //Debug.Log(foundObject.transform.name);
+
+        IXRSelectInteractable objName = socket.GetOldestInteractableSelected();
+
+        //Debug.Log(objName);
+
+        //Debug.Log(objName != null);
+        placeholderBall.SetActive(objName != null);
     }
 }

@@ -4309,7 +4309,7 @@ PrefabInstance:
     - target: {fileID: 4291630575884765577, guid: b8c253811a8658840b773f56577409c4,
         type: 3}
       propertyPath: m_Radius
-      value: 0.6
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5359638866813741568, guid: b8c253811a8658840b773f56577409c4,
         type: 3}
@@ -8756,34 +8756,10 @@ MonoBehaviour:
   m_StartingTargetFilter: {fileID: 0}
   m_HoverEntered:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 434389779}
-        m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_HoverExited:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 434389779}
-        m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -15671,7 +15647,7 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 298290541}
+      - m_Target: {fileID: 779326924}
         m_TargetAssemblyTypeName: DoorButton, Assembly-CSharp
         m_MethodName: OnSelectEntered
         m_Mode: 0
@@ -16348,6 +16324,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AnimatedBear
+      objectReference: {fileID: 0}
+    - target: {fileID: 2369388245744134874, guid: 38119491fdcc54543914c4579b6ad05f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Bear
       objectReference: {fileID: 0}
     - target: {fileID: 2509762602661811971, guid: 38119491fdcc54543914c4579b6ad05f,
         type: 3}
@@ -22572,7 +22553,7 @@ PrefabInstance:
     - target: {fileID: 5359638866813741568, guid: b8c253811a8658840b773f56577409c4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -32.189304
+      value: -29.13
       objectReference: {fileID: 0}
     - target: {fileID: 5359638866813741568, guid: b8c253811a8658840b773f56577409c4,
         type: 3}
@@ -22582,7 +22563,7 @@ PrefabInstance:
     - target: {fileID: 5359638866813741568, guid: b8c253811a8658840b773f56577409c4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 86.68
+      value: 85.7
       objectReference: {fileID: 0}
     - target: {fileID: 5359638866813741568, guid: b8c253811a8658840b773f56577409c4,
         type: 3}
@@ -22766,6 +22747,7 @@ MonoBehaviour:
   b: {fileID: 2100000, guid: 7e220636e2f0f084ab7086e6043f69c6, type: 2}
   placeholderBallMesh: {fileID: 1467466366}
   placeholderBall: {fileID: 1467466363}
+  socket: {fileID: 1893724970}
 --- !u!1001 &1177066640
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28314,7 +28296,7 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 298290541}
+      - m_Target: {fileID: 1435000215}
         m_TargetAssemblyTypeName: DoorButton, Assembly-CSharp
         m_MethodName: OnSelectEntered
         m_Mode: 0
@@ -35924,8 +35906,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.24, y: 0.34, z: 0.03}
+  m_Center: {x: 0.52, y: 0.03, z: 0.5}
 --- !u!1001 &1809405221
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38012,34 +37994,10 @@ MonoBehaviour:
   m_StartingTargetFilter: {fileID: 0}
   m_HoverEntered:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1907419270}
-        m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_HoverExited:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1907419270}
-        m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -40609,6 +40567,7 @@ MonoBehaviour:
   b: {fileID: 2100000, guid: 7e220636e2f0f084ab7086e6043f69c6, type: 2}
   placeholderBallMesh: {fileID: 1891237895}
   placeholderBall: {fileID: 1891237892}
+  socket: {fileID: 1057570982}
 --- !u!4 &1999293932 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7470086241874892892, guid: f07dc8e463b10914c8833bf75d6b8ea5,

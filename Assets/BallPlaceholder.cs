@@ -16,7 +16,7 @@ public class BallPlaceholder : MonoBehaviour
         //Debug.Log("Grabbed object: " + grabbedObj.gameObject.name);
         if (grabbedObj != null)
         {
-            Debug.Log("Grabbed object: " + grabbedObj.gameObject.name);
+            //Debug.Log("Grabbed object: " + grabbedObj.gameObject.name);
             if (grabbedObj.CompareTag("ball"))
             {
                 string strHold = grabbedObj.name;

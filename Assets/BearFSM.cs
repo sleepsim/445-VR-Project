@@ -24,6 +24,9 @@ public class BearFSM : MonoBehaviour
     public bool playerInSightRange;
     public bool playerInTalkRange;
 
+    [Header("Animator")]
+    public Animator lLeg, rLeg, lArm, rArm;
+
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -45,10 +48,21 @@ public class BearFSM : MonoBehaviour
         //else if (!playerInSightRange && resetComplete) Patrolling();
         //else if (playerInSightRange && resetComplete) ChasePlayer();
 
-        if (!playerInSightRange && !playerInTalkRange) Patrolling();
-        if (playerInSightRange && !playerInTalkRange) ChasePlayer();
-        if (playerInTalkRange && playerInSightRange) TalkToPlayer();
-
+        if (!playerInSightRange && !playerInTalkRange)
+        {
+            enableAnim();
+            Patrolling();
+        }
+        if (playerInSightRange && !playerInTalkRange)
+        {
+            enableAnim();
+            ChasePlayer();
+        }
+        if (playerInTalkRange && playerInSightRange)
+        {
+            disableAnim();
+            TalkToPlayer();
+        }
 
         //Debug.Log("walkpoint vector " + walkPoint);
         //Debug.Log("Current Position " + transform.position);
@@ -149,5 +163,24 @@ public class BearFSM : MonoBehaviour
         Gizmos.color= Color.yellow;
         Gizmos.DrawWireSphere(transform.position, sightRange);
 
+    }
+    private void disableAnim()
+    {
+        rLeg.Rebind();
+        lLeg.Rebind();
+        rArm.Rebind();
+        lArm.Rebind();
+
+        rLeg.enabled = false;
+        lLeg.enabled = false;
+        rArm.enabled = false;
+        lArm.enabled = false;
+    }
+    private void enableAnim()
+    {
+        rLeg.enabled = true;
+        lLeg.enabled = true;
+        rArm.enabled = true;
+        lArm.enabled = true;
     }
 }

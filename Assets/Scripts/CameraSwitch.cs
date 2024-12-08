@@ -18,8 +18,14 @@ public class CameraSwitch : MonoBehaviour
     public GameObject toyModel;
     public GameObject childModel;
 
+    [Header("Controller Inputs")]
     public InputAction cameraOneButton;
     public InputAction cameraTwoButton;
+    public InputAction instructionsButton;
+
+    [Header("Instruction Canvas")]
+    public GameObject toyInstruction;
+    public GameObject childInstruction;
 
     // Start is called before the first frame update
     void Start()
@@ -61,8 +67,10 @@ public class CameraSwitch : MonoBehaviour
         {
             toyModel.SetActive(false);
             childModel.SetActive(true);
-            childModel.transform.position = rigs[1].transform.position;
-            childModel.transform.LookAt(rigs[0].transform.position);
+            //Vector3 scaledVec = new Vector3(rigs[1].transform.position.x / childModel.transform.localScale.x, rigs[1].transform.position.y / childModel.transform.localScale.y, rigs[1].transform.position.z / childModel.transform.localScale.z);
+            childModel.transform.position = new Vector3(rigs[1].transform.position.x, rigs[1].transform.position.y - 115, rigs[1].transform.position.z + 105);
+            //Vector3 targetPosition = new Vector3(rigs[1].transform.position.x, transform.position.y, rigs[1].transform.position.z);
+            //childModel.transform.LookAt(targetPosition);
             SwitchToCamera(0);
         }
         if (cameraTwoButton.triggered)
@@ -75,6 +83,20 @@ public class CameraSwitch : MonoBehaviour
             toyModel.transform.position = heightOffset;
             toyModel.transform.rotation = rigs[0].transform.rotation;
             SwitchToCamera(1);
+        }
+
+        if(instructionsButton.triggered)
+        {
+            //If in toy view open instructions for toy
+            if(currentCameraIndex == 0)
+            {
+
+            }
+            //If in child view open instructions for child
+            if(currentCameraIndex == 1)
+            {
+
+            }
         }
     }
 

@@ -14,7 +14,7 @@ public class CakeScript : MonoBehaviour
         if (other.CompareTag("Bear"))
         {
             Debug.Log("Game Done");
-            SceneManager.LoadScene("EndScreen");
+            SceneManager.LoadScene("Outro");
             //endScreen();
         }
 

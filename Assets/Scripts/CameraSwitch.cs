@@ -69,8 +69,33 @@ public class CameraSwitch : MonoBehaviour
             childModel.SetActive(true);
             //Vector3 scaledVec = new Vector3(rigs[1].transform.position.x / childModel.transform.localScale.x, rigs[1].transform.position.y / childModel.transform.localScale.y, rigs[1].transform.position.z / childModel.transform.localScale.z);
             childModel.transform.position = new Vector3(rigs[1].transform.position.x, rigs[1].transform.position.y - 115, rigs[1].transform.position.z + 105);
-            //Vector3 targetPosition = new Vector3(rigs[1].transform.position.x, transform.position.y, rigs[1].transform.position.z);
-            //childModel.transform.LookAt(targetPosition);
+
+            Vector3 targetPosition = new Vector3();
+            Vector3 targetRotation = new Vector3();
+
+            Transform childPos = rigs[1].transform;
+            if (childPos.position.x > - 5 && childPos.position.x < 90)
+            {
+                //Middle
+                targetPosition = new Vector3(108, -16, -90);
+                targetRotation = new Vector3(0, 3, 0);
+            }
+            else if(childPos.position.x > -5 && childPos.position.x > 90)
+            {
+                //Right
+                targetPosition = new Vector3(130, -16, 158);
+                targetRotation = new Vector3(0, -92, 0);
+            }
+            else if(childPos.position.x < -5)
+            {
+                //Left
+                targetPosition = new Vector3(-143,-16,-56);
+                targetRotation = new Vector3(0,94,0);
+            }
+
+            childModel.transform.position = targetPosition;
+            childModel.transform.rotation = Quaternion.Euler(targetRotation);
+
             SwitchToCamera(0);
         }
         if (cameraTwoButton.triggered)

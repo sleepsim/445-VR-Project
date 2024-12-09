@@ -205,8 +205,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1834327290}
-        m_TargetAssemblyTypeName: UIButton, Assembly-CSharp
+      - m_Target: {fileID: 1834327291}
+        m_TargetAssemblyTypeName: UIButtonOutro, Assembly-CSharp
         m_MethodName: next
         m_Mode: 1
         m_Arguments:
@@ -445,8 +445,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1834327290}
-        m_TargetAssemblyTypeName: UIButton, Assembly-CSharp
+      - m_Target: {fileID: 1834327291}
+        m_TargetAssemblyTypeName: UIButtonOutro, Assembly-CSharp
         m_MethodName: prev
         m_Mode: 1
         m_Arguments:
@@ -1201,7 +1201,6 @@ GameObject:
   - component: {fileID: 1834327284}
   - component: {fileID: 1834327288}
   - component: {fileID: 1834327289}
-  - component: {fileID: 1834327290}
   - component: {fileID: 1834327291}
   m_Layer: 5
   m_Name: Canvas
@@ -1332,22 +1331,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RaycastTriggerInteraction: 1
---- !u!114 &1834327290
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1834327283}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb0fc05a19a1d524c8cdd09540e9ef73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pic1: {fileID: 581835937}
-  pic2: {fileID: 1896315765}
-  buttonNext: {fileID: 158592958}
-  buttonPrev: {fileID: 636078650}
 --- !u!114 &1834327291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1360,11 +1343,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb87ce1ddca5eb48a2ed508d0e9e5f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  out1: {fileID: 0}
-  out2: {fileID: 0}
-  out3: {fileID: 0}
-  buttonNext: {fileID: 0}
-  buttonPrev: {fileID: 0}
+  out1: {fileID: 581835937}
+  out2: {fileID: 1896315765}
+  out3: {fileID: 647630996}
+  buttonNext: {fileID: 158592958}
+  buttonPrev: {fileID: 636078650}
 --- !u!1 &1896315765
 GameObject:
   m_ObjectHideFlags: 0
